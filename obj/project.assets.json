@@ -78,7 +78,7 @@
           "Microsoft.EntityFrameworkCore.Relational": "3.0.0"
         },
         "compile": {
-          "lib/netstandard2.1/_._": {}
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {}
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -1249,6 +1249,32 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "EFCore.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/EFCore.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EFCore.Dominio.dll": {}
+        }
+      },
+      "EFCore.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "dependencies": {
+          "EFCore.Dominio": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "3.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.0.0",
+          "Microsoft.EntityFrameworkCore.Tools": "3.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EFCore.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EFCore.Repository.dll": {}
         }
       }
     }
@@ -4902,10 +4928,22 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "EFCore.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../EFCore.Dominio/EFCore.Dominio.csproj",
+      "msbuildProject": "../EFCore.Dominio/EFCore.Dominio.csproj"
+    },
+    "EFCore.Repository/1.0.0": {
+      "type": "project",
+      "path": "../EFCore.Repository/EFCore.Repository.csproj",
+      "msbuildProject": "../EFCore.Repository/EFCore.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
+      "EFCore.Dominio >= 1.0.0",
+      "EFCore.Repository >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.0.0"
@@ -4918,11 +4956,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dnova\\OneDrive\\Documentos\\WebApi\\EFCore.WebApi\\EFCore.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\dnova\\Source\\Repos\\EFCore.WebApi\\EFCore.WebApi.csproj",
       "projectName": "EFCore.WebApi",
-      "projectPath": "C:\\Users\\dnova\\OneDrive\\Documentos\\WebApi\\EFCore.WebApi\\EFCore.WebApi.csproj",
+      "projectPath": "C:\\Users\\dnova\\Source\\Repos\\EFCore.WebApi\\EFCore.WebApi.csproj",
       "packagesPath": "C:\\Users\\dnova\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dnova\\OneDrive\\Documentos\\WebApi\\EFCore.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\dnova\\Source\\Repos\\EFCore.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -4941,7 +4979,14 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\dnova\\Source\\Repos\\EFCore.Dominio\\EFCore.Dominio.csproj": {
+              "projectPath": "C:\\Users\\dnova\\Source\\Repos\\EFCore.Dominio\\EFCore.Dominio.csproj"
+            },
+            "C:\\Users\\dnova\\Source\\Repos\\EFCore.Repository\\EFCore.Repository.csproj": {
+              "projectPath": "C:\\Users\\dnova\\Source\\Repos\\EFCore.Repository\\EFCore.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

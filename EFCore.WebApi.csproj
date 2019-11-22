@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20191115003237_initial.cs" />
-    <Compile Remove="Migrations\20191115003237_initial.Designer.cs" />
+    <Compile Remove="WeatherForecast.cs" />
   </ItemGroup>
 
 
@@ -17,6 +16,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\EFCore.Dominio\EFCore.Dominio.csproj" />
+    <ProjectReference Include="..\EFCore.Repository\EFCore.Repository.csproj" />
   </ItemGroup>
 
 </Project>
