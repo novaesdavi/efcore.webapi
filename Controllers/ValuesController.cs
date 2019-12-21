@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using EFCore.Dominio;
 using EFCore.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace EFCore.WebApi.Controllers
@@ -24,18 +25,17 @@ namespace EFCore.WebApi.Controllers
         [HttpGet("filtro/{nome}")]
         public ActionResult Get(string nome)
         {
-            //var listaRetono = (from heroi in _contexto.Herois
-            //           where heroi.Nome.Contains(nome)
-            //           select heroi).ToList();
+            var listaRetono = (from heroi in _contexto.Herois
+                               where EF.Functions.Like(heroi.Nome,$"%{nome}%") // /  heroi.Nome.Contains(nome)
+                               select heroi).Single();
 
-            var listaRetono = new List<Heroi>();
+            //var listaRetono = new List<Heroi>();
 
-            foreach (var item in _contexto.Herois)
-            {
+            //foreach (var item in _contexto.Herois)
+            //{
 
-                Thread.Sleep(50000);
-                listaRetono.Add(item);
-            }
+            //    listaRetono.Add(item);
+            //}
 
 
 

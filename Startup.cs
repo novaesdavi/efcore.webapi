@@ -32,6 +32,8 @@ namespace EFCore.WebApi
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
 
             });
+
+            //services.AddDbContext<BatalhaContext>
             services.AddControllers();
         }
 
